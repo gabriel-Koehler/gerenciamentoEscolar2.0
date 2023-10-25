@@ -13,7 +13,7 @@ import java.util.Set;
 @Entity
 public class Curso {
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     @ManyToMany

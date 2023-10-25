@@ -14,7 +14,6 @@ import java.util.Optional;
 @AllArgsConstructor
 public class TurmaService {
     private final TurmaRepository turmaRepository;
-    private final AlunoRepository alunoRepository;
 
 
     public Turma buscarUm(Long id) {

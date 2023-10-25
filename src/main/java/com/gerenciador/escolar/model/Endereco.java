@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Endereco {
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String rua;
     private Integer numero;

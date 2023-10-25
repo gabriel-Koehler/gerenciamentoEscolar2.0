@@ -1,23 +1,24 @@
 package com.gerenciador.escolar.service;
 
-import com.gerenciador.escolar.model.Aluno;
+import com.gerenciador.escolar.model.Endereco;
+import com.gerenciador.escolar.model.Usuario;
 import com.gerenciador.escolar.model.UsuarioIdClass;
-import com.gerenciador.escolar.repository.AlunoRepository;
+import com.gerenciador.escolar.repository.EnderecoRepository;
+import com.gerenciador.escolar.repository.UsuarioRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
-
 @Service
 @AllArgsConstructor
-public class AlunoService {
-    private final AlunoRepository repository;
+public class UsuarioService {
+    private final UsuarioRepository repository;
 
-    public Aluno buscarUm(Long id,Long cpf) {
+    public Usuario buscarUm(Long id,Long cpf) {
         return repository.findById(new UsuarioIdClass(id,cpf)).get();
     }
 
-    public Collection<Aluno> buscarTodos() {
+    public Collection<Usuario> buscarTodos() {
         return repository.findAll();
     }
 
@@ -25,7 +26,7 @@ public class AlunoService {
         repository.deleteById(new UsuarioIdClass(id,cpf));
     }
 
-    public void salvar(Aluno aluno) {
+    public void salvar(Usuario aluno) {
         repository.save(aluno);
     }
 }

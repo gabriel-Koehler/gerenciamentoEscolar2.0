@@ -13,7 +13,7 @@ import java.util.Set;
 @Entity
 public class Turma {
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id",unique=true,nullable=false)
     private Integer id;
     private String nome;

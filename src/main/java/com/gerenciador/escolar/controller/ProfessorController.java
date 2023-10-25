@@ -3,19 +3,20 @@ package com.gerenciador.escolar.controller;
 import com.gerenciador.escolar.model.Professor;
 import com.gerenciador.escolar.service.ProfessorService;
 import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
-
+@Controller
 @RestController
 @AllArgsConstructor
 @RequestMapping("/professor")
 public class ProfessorController {
     private final ProfessorService professorService;
 
-    @GetMapping("/{id}")
-    public Professor buscarUm(@PathVariable Long id) {
-        return professorService.buscarUm(id);
+    @GetMapping("/{id}/{cpf}")
+    public Professor buscarUm(@PathVariable Long id,@PathVariable Long cpf) {
+        return professorService.buscarUm(id,cpf);
     }
 
     @GetMapping
@@ -23,9 +24,9 @@ public class ProfessorController {
         return professorService.buscarTodos();
     }
 
-    @DeleteMapping("/{id}")
-    public void deletar(@PathVariable Long id) {
-        professorService.deletar(id);
+    @DeleteMapping("/{id}/{cpf}")
+    public void deletar(@PathVariable Long id,@PathVariable Long cpf) {
+        professorService.deletar(id,cpf);
     }
 
     @PostMapping

@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 @Data
 @NoArgsConstructor
@@ -14,7 +16,7 @@ import lombok.NoArgsConstructor;
 
 public class Usuario {
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.TABLE )
     private Long id;
     @Id
     private Long cpf;
@@ -22,7 +24,8 @@ public class Usuario {
     private String nome;
     private String email;
     private String telefone;
-    @OneToOne(cascade = CascadeType.PERSIST)
+    @Cascade(CascadeType.ALL)
+    @OneToOne
     private Endereco endereco;
 
 }

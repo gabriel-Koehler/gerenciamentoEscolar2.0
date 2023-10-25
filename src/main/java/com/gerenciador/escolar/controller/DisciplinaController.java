@@ -3,10 +3,11 @@ package com.gerenciador.escolar.controller;
 import com.gerenciador.escolar.model.Disciplina;
 import com.gerenciador.escolar.service.DisciplinaService;
 import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
-
+@Controller
 @RestController
 @AllArgsConstructor
 @RequestMapping("/disciplina")
